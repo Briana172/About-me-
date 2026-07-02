@@ -12,6 +12,8 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
 }
 
 /* One clean container card */
@@ -168,4 +170,47 @@ li {
     color: #ff6b81;
     font-size: 26px;
     min-height: 32px;
+}
+
+.recipe-popup {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: min(320px, calc(100% - 24px));
+    background: #fff7e6;
+    border: 2px solid #f7b731;
+    border-radius: 16px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+    padding: 16px 18px;
+    z-index: 1000;
+    animation: slideUp 0.4s ease-out;
+}
+
+.recipe-popup h3 {
+    color: #b85c38;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.recipe-popup p {
+    color: #7a4b2a;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.recipe-popup ol {
+    padding-left: 18px;
+    color: #5f3d24;
+    line-height: 1.5;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(12px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
